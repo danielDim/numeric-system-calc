@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Калкулатор</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Kelly+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="main-terminal">
+		<p id="exit">X</p>
+		<div class="info">
+			<p>Здравейте това е конзолния режим на калкулатора</p>
+			<p>въведете команда 'help' за да видите останалите команди.</p>
+		</div>
+		<div class="guest">
+			<p>guest@Daniel-PC:~$</p>
+		</div>
+		<div class="commands">
+			<input type="text" size="50" autofocus>
+		</div>
+	</div>
+		<section>
+			<img src="images/calculator.png" alt="calculator" id="calc">
+			<img src="images/calculator1.png" alt="calculator" id="calc1">
+			<div class="container">
+				<h1>Калкулатор за бройни системи</h1>
+				<div class="form">
+					<h3>Моля въведете стойност</h3>
+					<p>Десетично</p>
+					<input type="text" name="dec" id="deci" maxlenght="20" size="30" value="" />
+					<br>
+					<p>Двоично</p>
+					<input type="text" name="bin" id="bin" maxlenght="20" size="30" value="" />
+					<br>
+					<p>Осмично</p>
+					<input type="text" name="octa" id="octa" maxlenght="20" size="30" value="" />
+					<br>
+					<p>Шестнаидесетично</p>
+					<input type="text" name="hex" id="hex" maxlenght="20" size="30" value="" />
+					<br>
+				</div>
+				<img src="images/pen.png" alt="pen" id="pen">
+			</div>
+		</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$('#hex').keyup(function(){
+		var y = document.getElementById("hex").value;
+
+		y1 = "0x" + y
+		var deci = parseInt(y1);
+		var octa = deci.toString(8);
+		var binary = deci.toString(2);
+
+		document.getElementById("deci").value = deci;
+		document.getElementById("bin").value = binary;
+		document.getElementById("octa").value = octa;
+	});
+	$('#octa').keyup(function(){
+		var y = document.getElementById("octa").value;
+
+		y = parseInt(y);
+		var deci = parseInt(y , 8);
+		var hex = deci.toString(16);
+		var binary = deci.toString(2);
+
+		document.getElementById("deci").value = deci;
+		document.getElementById("bin").value = binary;
+		document.getElementById("hex").value = hex;
+	});
+	$('#bin').keyup(function(){
+		var y = document.getElementById("bin").value;
+
+		y = parseInt(y);
+		var deci = parseInt(y , 2);
+		var hex = deci.toString(16);
+		var octa = deci.toString(8);
+
+		document.getElementById("deci").value = deci;
+		document.getElementById("hex").value = hex;
+		document.getElementById("octa").value = octa;
+	});
+	$('#deci').keyup(function(){
+		var y = document.getElementById("deci").value;
+
+		y = parseInt(y);
+		var binary = y.toString(2);
+		var hex = y.toString(16);
+		var octa = y.toString(8);
+
+		document.getElementById("bin").value = binary;
+		document.getElementById("hex").value = hex;
+		document.getElementById("octa").value = octa;
+	});
+	$('img#calc').on('mouseenter', function(){
+	  	$('img#calc').hide();
+	  	$('img#calc1').show();
+  	});
+	$('img#calc1').on('mouseleave', function(){
+		$('img#calc').show();
+	  	$('img#calc1').hide();
+  	}).on('click', function(){
+  		$('section').hide();
+  		$('.main-terminal').show();
+  	});
+
+  	$('p#exit').on('click', function(){
+  		$('.main-terminal').hide();
+  		$('section').show();
+  	});
+</script>
+</body>
+</html>

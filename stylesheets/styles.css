@@ -1,0 +1,133 @@
+@font-face {
+  font-family:'Ubuntu';
+  src:url('ubuntu.ttf');
+}
+
+body{
+  background-image:url(../images/wood.jpg);
+}
+
+section {
+  width: 600px;
+  height: 640px;
+  background: url(../images/board.png) no-repeat;
+  margin: 30px auto;
+  font-family: 'Kelly slab', cursive;
+}
+
+.container {
+  margin:auto;
+  text-align:center;
+  position: relative;
+  top: -150px;
+  font-size: 17px;
+  }
+
+.container h1,h2 ,p {
+  margin: 10px;
+}
+
+#calc{
+  width: 200px;
+  position: relative;
+  top: 170px;
+  left: -70px;
+  -ms-transform: rotate(-17deg);
+    -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg);
+  cursor: pointer;
+  z-index: 1;
+  }
+
+  #calc1{
+  display: none;
+  width: 200px;
+  position: relative;
+  top: 170px;
+  left: -70px;
+  -ms-transform: rotate(-17deg);
+    -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg);
+  cursor: pointer;
+  z-index:1;
+  }
+
+
+  #pen{
+    position: relative;
+    top: -75px;
+    left: 150px;
+    -ms-transform: rotate(42deg);
+    -webkit-transform: rotate(42deg);
+    transform: rotate(42deg);
+  }
+
+  .main-terminal{
+    display: none;
+    margin: auto;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 97vh;
+    border-top: 30px solid #44433F;
+    border-bottom: 5px solid #44433F;
+    border-left: 5px solid #44433F;
+    border-right: 5px solid #44433F;
+    border-radius: 10px;
+    padding: 10px;
+    background: #300924;
+    color: white;
+    z-index: 2;
+    font-family:'Ubuntu';
+  }
+
+  .main-terminal p {
+    margin:3px;
+  }
+
+  .main-terminal p#exit {
+    position: absolute;
+    top:10px;
+    font-size: 11px;
+    padding: 2px 6px;
+    cursor: pointer;
+    border-radius: 14px;
+    background-color: #FF6437;
+    color:#800300;
+  }
+
+  .guest{
+    float: left;
+    font:20px 'Ubuntu';
+  }
+
+  .commands input {
+    background-color: #300924;
+    color: white;
+    border:0;
+    padding: 4px;
+    font:20px 'Ubuntu';
+  }
+
+  .commands input:focus{
+    outline: 0;
+  }
+
+
+.form input {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+}
+
+.form input:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
