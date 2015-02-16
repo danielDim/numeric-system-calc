@@ -16,10 +16,10 @@ section {
 }
 
 .container {
-  margin:auto;
+  margin:70px;
   text-align:center;
   position: relative;
-  top: -150px;
+  top: 100px;
   font-size: 17px;
   }
 
@@ -37,81 +37,90 @@ section {
     transform: rotate(-17deg);
   cursor: pointer;
   z-index: 1;
-  }
+}
 
-  #calc1{
-  display: none;
-  width: 200px;
+#calc1{
+display: none;
+width: 200px;
+position: relative;
+top: 170px;
+left: -70px;
+-ms-transform: rotate(-17deg);
+  -webkit-transform: rotate(-17deg);
+  transform: rotate(-17deg);
+cursor: pointer;
+z-index:1;
+}
+
+
+#pen{
   position: relative;
-  top: 170px;
-  left: -70px;
-  -ms-transform: rotate(-17deg);
-    -webkit-transform: rotate(-17deg);
-    transform: rotate(-17deg);
+  top: -70px;
+  left: 150px;
+  -ms-transform: rotate(42deg);
+  -webkit-transform: rotate(42deg);
+  transform: rotate(42deg);
+}
+
+.main-terminal{
+  display: none;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 97vh;
+  border-top: 30px solid #44433F;
+  border-bottom: 5px solid #44433F;
+  border-left: 5px solid #44433F;
+  border-right: 5px solid #44433F;
+  border-radius: 10px;
+  padding: 10px;
+  background: #300924;
+  color: white;
+  z-index: 2;
+  font-family:'Ubuntu';
+  overflow: hidden;
+}
+
+.main-terminal p {
+  margin:3px;
+}
+
+.main-terminal p#exit {
+  position: fixed;
+  top:10px;
+  font-size: 11px;
+  padding: 2px 6px;
   cursor: pointer;
-  z-index:1;
-  }
+  border-radius: 14px;
+  background-color: #FF6437;
+  color:#800300;
+}
 
+#Num, #Sys{
+ display: none;
+}
 
-  #pen{
-    position: relative;
-    top: -75px;
-    left: 150px;
-    -ms-transform: rotate(42deg);
-    -webkit-transform: rotate(42deg);
-    transform: rotate(42deg);
-  }
+#pSys, #pNum{
+  float: left;
+}
 
-  .main-terminal{
-    display: none;
-    margin: auto;
-    box-sizing: border-box;
-    overflow-y: auto;
-    height: 97vh;
-    border-top: 30px solid #44433F;
-    border-bottom: 5px solid #44433F;
-    border-left: 5px solid #44433F;
-    border-right: 5px solid #44433F;
-    border-radius: 10px;
-    padding: 10px;
-    background: #300924;
-    color: white;
-    z-index: 2;
-    font-family:'Ubuntu';
-  }
+#guest{
+  float: left;
+  font:20px 'Ubuntu';
+}
 
-  .main-terminal p {
-    margin:3px;
-  }
+.main-terminal input {
+  background-color: #300924;
+  color: white;
+  border:0;
+  padding: 3px;
+  font:18px 'Ubuntu';
+}
 
-  .main-terminal p#exit {
-    position: absolute;
-    top:10px;
-    font-size: 11px;
-    padding: 2px 6px;
-    cursor: pointer;
-    border-radius: 14px;
-    background-color: #FF6437;
-    color:#800300;
-  }
-
-  .guest{
-    float: left;
-    font:20px 'Ubuntu';
-  }
-
-  .commands input {
-    background-color: #300924;
-    color: white;
-    border:0;
-    padding: 4px;
-    font:20px 'Ubuntu';
-  }
-
-  .commands input:focus{
-    outline: 0;
-  }
-
+.main-terminal input:focus{
+  outline: 0;
+}
 
 .form input {
   -webkit-transition: all 0.30s ease-in-out;
@@ -121,8 +130,11 @@ section {
   outline: none;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+  /*border: 1px solid #DDDDDD;*/
   border-radius: 5px;
+  border:1px solid #cbcbcb;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,0.18);
+  font-size:16px
 }
 
 .form input:focus{
@@ -130,4 +142,54 @@ section {
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.main-terminal p{
+  font-size: 18px;
+}
+
+#result p {
+  margin:0 15px;
+}
+
+.lCommand {
+  font-size: 18px;
+}
+
+#menu-icon{
+  display: none;
+}
+.menu-icon{
+  display: block;
+  color: #f3f3f3;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  top: -71px;
+  left: -160px;
+  cursor: pointer;
+  background-color: #424242;
+  padding: 15px;
+  border-radius: 0 0 30px 0;
+  box-shadow:1px 0 0 1px rgba(14,41,57,0.12),2px 2px 5px rgba(14,41,57,0.44),inset -1px -1px 2px rgba(14,41,57,0.15);
+  width: 20px;
+  float: left;
+}
+.menu{
+  display: block;
+  font-family: 'Kelly slab', cursive;
+  position: relative;
+  float: left;
+  font-size: 17px;
+  top: -90px;
+  left: -160px;
+  text-align: center;
+  width: 150px;
+  color: #f3f3f3;
+}
+.menu h3{
+  background-color: #424242;
+  padding: 13px 0;
+  box-shadow:1px 0 0 1px rgba(14,41,57,0.12),2px 2px 5px rgba(14,41,57,0.44);
+  cursor: pointer;
 }

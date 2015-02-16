@@ -15,7 +15,7 @@
 			<p>въведете команда 'help' за да видите останалите команди.</p>
 		</div> -->
 		<div id="result"></div>
-		<div id="guest">
+		<div id="guest"> 
 			<p>guest@Daniel-PC:~$</p>
 		</div>
 		<div class="commands">
@@ -34,9 +34,9 @@
 		<h3 id='menu-console'>Конзола</h3>
 	</div>
 	<a href="#" class="menu-icon">&#9776;</a>
-		<section>
+		<section><!-- 
 			<img src="images/calculator.png" alt="calculator" id="calc">
-			<img src="images/calculator1.png" alt="calculator" id="calc1">
+			<img src="images/calculator1.png" alt="calculator" id="calc1"> -->
 			<div class="container hidden-md">
 				<h1>Калкулатор за бройни системи</h1>
 				<div class="form">
@@ -53,50 +53,50 @@
 					<p>Шестнаидесетично</p>
 					<input type="text" name="hex" id="hex" maxlenght="20" size="30" value="" />
 					<br>
-				</div>
+    </div>
 				<img src="images/pen.png" alt="pen" id="pen">
 			</div>
 		</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-	    checkSize();
+		checkSize();
 		$(window).resize(checkSize);
 	});
 
 
 	function checkSize(){
-    if ($(".container").css("top") == "15px" ){
-        $('img#calc').hide();
-	  	$('img#calc1').hide();
-	  	$('img#pen').hide();
-    	}else{
-    	$('img#calc').show();
-    	$('img#pen').show();
-    	}
+	if ($(".container").css("top") == "15px" ){
+		$('img#calc').hide();
+		$('img#calc1').hide();
+		$('img#pen').hide();
+		}else{
+		$('img#calc').show();
+		$('img#pen').show();
+		}
 	}
 
 	$('#menu-console').on('click',function() {
 		$('section').hide();
-  		$('.main-terminal').show();
-  		$('.menu-icon').hide();
-  		$('.menu').hide();
+		$('.main-terminal').show();
+		$('.menu-icon').hide();
+		$('.menu').hide();
 	})
 
 	$('.menu-icon').on('click',function() {
 		if($('.menu').css('left') == '-160px'){
 			$('.menu').animate({
-			    left: "-7"
+				left: "-7"
 			  }, 500);
 			$('.menu-icon').animate({
-			    left: "-7"
+				left: "-7"
 			  }, 500);
 		}else{
 			$('.menu').animate({
-			    left: "-160"
+				left: "-160"
 			  }, 500);
 			$('.menu-icon').animate({
-			    left: "-160"
+				left: "-160"
 			  }, 500);
 		}
 	})
@@ -151,64 +151,62 @@
 		document.getElementById("octa").value = octa;
 	});
 	$('img#calc').on('mouseenter', function(){
-	  	$('img#calc').hide();
-	  	$('img#calc1').show();
-  	});
+		$('img#calc').hide();
+		$('img#calc1').show();
+	});
 	$('img#calc1').on('mouseleave', function(){
 		$('img#calc').show();
-	  	$('img#calc1').hide();
-  	}).on('click', function(){ 
-  		$('section').hide();
-  		$('.main-terminal').show();
-  	});
-  	$('p#exit').on('click', function(){
-  		$('.main-terminal').hide();
-  		$('section').show();
-  		$('#Num').hide();
-  		$('#Sys').hide();
-  		$('#number').val('');
-  		$('#system').val('');
-  		$('div#result').html('');
-  		$('#console-text').val('');
-  		if ($(".container").css("top") == "15px" ){
-  			$('.menu-icon').show();
-  		 	$('.menu').show();
-  		 }
-  	});
+		$('img#calc1').hide();
+	}).on('click', function(){ 
+		$('section').hide();
+		$('.main-terminal').show();
+	});
+	$('p#exit').on('click', function(){
+		$('.main-terminal').hide();
+		$('section').show();
+		$('#Num').hide();
+		$('#Sys').hide();
+		$('#number').val('');
+		$('#system').val('');
+		$('div#result').html('');
+		$('#console-text').val('');
+		$('.menu-icon').show();
+		$('.menu').show();
+	});
 
-  	$('div.main-terminal').on('click', function(){
-  		$('input#console-text').focus();
-  	});
+	$('div.main-terminal').on('click', function(){
+		$('input#console-text').focus();
+	});
 
-  	$('input#console-text').keypress(function(e){
-  		if(e.which == 13){
-  			var val = document.getElementById('console-text').value,
-  				result = $('div#result'),
-  				num = document.getElementById('number').value,
+	$('input#console-text').keypress(function(e){
+		if(e.which == 13){
+			var val = document.getElementById('console-text').value,
+				result = $('div#result'),
+				num = document.getElementById('number').value,
 				sys = document.getElementById('system').value,
-  				jumpToBottom = function(a){
-  					$('.main-terminal').animate({
-			             scrollTop: $(".main-terminal").prop("scrollHeight")
-			        }, 300)
-  				},
-  				process = function(){
-  					$('div#result').append($('<div>').addClass('lCommand').text('guest@Daniel-PC:~$ ' + val));
-  					$('#console-text').val('');
-  					jumpToBottom()
-  				},
-  				conv = function(){
-  					$('div#result').append($('<div>').addClass('lCommand').text('guest@Daniel-PC:~$ ' + val));
-  					$('div#result').append($('<div>').addClass('lCommand').text('Моля въведете число :' + document.getElementById('number').value));
-  					$('div#result').append($('<div>').addClass('lCommand').text('Моля въведете бройна система на числото :' + document.getElementById('system').value));
-  					$('div#result').append('<h3>Резултат:</h3>');
-  					$('#Num').hide();
-			  		$('#Sys').hide();
-			  		$('#number').val('');
-			  		$('#system').val('');
-			  		$('#console-text').val('');
-			  		jumpToBottom()
-  				},
-  				calc = function(a, b){
+				jumpToBottom = function(a){
+					$('.main-terminal').animate({
+						 scrollTop: $(".main-terminal").prop("scrollHeight")
+					}, 300)
+				},
+				process = function(){
+					$('div#result').append($('<div>').addClass('lCommand').text('guest@Daniel-PC:~$ ' + val));
+					$('#console-text').val('');
+					jumpToBottom()
+				},
+				conv = function(){
+					$('div#result').append($('<div>').addClass('lCommand').text('guest@Daniel-PC:~$ ' + val));
+					$('div#result').append($('<div>').addClass('lCommand').text('Моля въведете число :' + document.getElementById('number').value));
+					$('div#result').append($('<div>').addClass('lCommand').text('Моля въведете бройна система на числото :' + document.getElementById('system').value));
+					$('div#result').append('<h3>Резултат:</h3>');
+					$('#Num').hide();
+					$('#Sys').hide();
+					$('#number').val('');
+					$('#system').val('');
+					$('#console-text').val('');
+					jumpToBottom()
+				},
+				calc = function(a, b){
 					var	a = document.getElementById('number').value,
 						b = document.getElementById('system').value;
 
@@ -231,7 +229,7 @@
 
 						conv()
 
-						result.append("<p>Осмичното число на" + a + " е " + octa  + "<br/>");
+						result.append("<p>Осмичното число на " + a + " е " + octa  + "<br/>");
 						result.append("<p>Десетичното число на " + a + " e " + deci + "<br/>") ;
 						result.append("<p>Шестнаидесетичното число на " + a + " е " + hex  + "<br/>");
 					}else if (b === 'octa'){
@@ -259,88 +257,86 @@
 					}
 					};
 
-  			if (val === 'help'){
-  				process()
-  				result.append('<p>help</p>');
-  				result.append('<p>ls</p>');
-  				result.append('<p>convert</p>');
-  				result.append('<p>cat</p>');
-  				result.append('<p>clear</p>');
-  				result.append('<p>exit</p>');
+			if (val === 'help'){
+				process()
+				result.append('<p>help</p>');
+				result.append('<p>ls</p>');
+				result.append('<p>convert</p>');
+				result.append('<p>cat</p>');
+    result.append('<p>cd</p>');
+				result.append('<p>clear</p>');
+				result.append('<p>exit</p>');
 
-  			}else if (val === 'clear'){
-  				process()
-  				result.html('');
-  				$('#Num').hide();
-  				$('#Sys').hide();
-  				$('#number').val('');
-  				$('#system').val('');
-  			}else if(val === 'ls'){
-  				process()
-  				result.append('<p>welcome.txt</p>');
-  				result.append('<p>about.txt</p>');
-  				result.append('<p>facebook/</p>');
-  				result.append('<p>twitter/</p>');
-  			}else if(val === 'cat welcome.txt'){
-  				process()
-  				result.append('<p>&nbsp&nbspДобре дошли в този забавен емулатор на</p>');
-  				result.append('<p>терминал,това е просто за забава и да си</p>');
-  				result.append('<p> тествам,новопридобитите умения в  jQuery :).</p>');
-  			}else if(val === 'cat about.txt'){
-  				process()
-  				result.append('<p>&nbsp&nbsp Здравейте аз се казвам Даниел Димитров,</p>');
-  				result.append('<p>това е моят първи проект с който се стремя</p>');
-  				result.append('<p>да приложа новопридобитите от мен умения.</p>');
-  			}else if(val === 'cd facebook/'){
-  				process()
-  				window.open('https://www.facebook.com/daniel.dimitrov.921');
-  			}else if(val === 'cd twitter/'){
-  				process()
-  				window.open('https://twitter.com/vexx4e');
-  			}else if (val === 'cat'){
-  				process()
-  				result.append('<p>Usage: cat [FILE]...</p>')
-  				result.append('<p>Concatenate FILE(s), or standard input, to standard output.</p>')
-  			}else if (val === 'cd'){
-  				process()
-  				result.append('<p>cd: undefined: No such file or directory')
-  			}else if(val === 'exit'){
-  				process()
-  				$('#Num').hide();
-  				$('#Sys').hide();
-  				$('#number').val('');
-  				$('#system').val('');
-  				$('.main-terminal').hide();
-  				$('section').show();
-  				$('div#result').html('');
-  				$('#console-text').val('');
-  				if ($(".container").css("top") == "15px" ){
-		  			$('.menu-icon').show();
-		  		 	$('.menu').show();
-		  		 }
-  			}else if(val === 'convert'){
+			}else if (val === 'clear'){
+				process()
+				result.html('');
+				$('#Num').hide();
+				$('#Sys').hide();
+				$('#number').val('');
+				$('#system').val('');
+			}else if(val === 'ls'){
+				process()
+				result.append('<p>welcome.txt</p>');
+				result.append('<p>about.txt</p>');
+				result.append('<p>facebook/</p>');
+				result.append('<p>twitter/</p>');
+			}else if(val === 'cat welcome.txt'){
+				process()
+				result.append('<p>&nbsp&nbspДобре дошли в този забавен емулатор на</p>');
+				result.append('<p>терминал,това е просто за забава и да си</p>');
+				result.append('<p> тествам,новопридобитите умения в  jQuery :).</p>');
+			}else if(val === 'cat about.txt'){
+				process()
+				result.append('<p>&nbsp&nbsp Здравейте аз се казвам Даниел Димитров,</p>');
+				result.append('<p>това е моят първи проект с който се стремя</p>');
+				result.append('<p>да приложа новопридобитите от мен умения.</p>');
+			}else if(val === 'cd facebook/'){
+				process()
+				window.open('https://www.facebook.com/daniel.dimitrov.921');
+			}else if(val === 'cd twitter/'){
+				process()
+				window.open('https://twitter.com/vexx4e');
+			}else if (val === 'cat'){
+				process()
+				result.append('<p>Usage: cat [FILE]...</p>')
+				result.append('<p>Concatenate FILE(s), or standard input, to standard output.</p>')
+			}else if (val === 'cd'){
+				process()
+				result.append('<p>cd: undefined: No such file or directory')
+			}else if(val === 'exit'){
+				process()
+				$('#Num').hide();
+				$('#Sys').hide();
+				$('#number').val('');
+				$('#system').val('');
+				$('.main-terminal').hide();
+				$('section').show();
+				$('div#result').html('');
+				$('#console-text').val('');
+				$('.menu-icon').show();
+				$('.menu').show();
+			}else if(val === 'convert'){
 				$('#console-text').prop('disabled',true);
 				$('#Num').show();
-				$('input#number').focus();
-				var a = document.getElementById('number').value; 
+				$('input#number').focus(); 
 				$('input#number').keypress(function(e){
-  					if(e.which == 13){
-  						$('#Sys').show()
-  						$('input#number').prop('disabled',true);
-  						$('input#system').focus();;
-  							$('input#system').keypress(function(e){
-  								if(e.which == 13){
-  									calc()
-  									$('#console-text').prop('disabled',false).focus();
-  									
-  								}});
-  					}});
-  			}else {
-  				process()
-  				result.append('<p>Командата не е разпозната.Моля въведете "help" !</p>');
-  			}
-  		}
-  	});
+					if(e.which == 13){
+						$('#Sys').show()
+						$('input#number').prop('disabled',true);
+						$('input#system').focus();;
+							$('input#system').keypress(function(e){
+								if(e.which == 13){
+									calc()
+									$('#console-text').prop('disabled',false).focus();    
+									
+								}});
+					}});
+   }else {
+				process()
+				result.append('<p>Командата не е разпозната.Моля въведете "help" !</p>');
+			}
+		}
+	});
 </script>
 </body>
 </html>
